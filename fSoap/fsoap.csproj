@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0C6A924-3299-469A-A5CD-39F2DF601155}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cn.noisyfox.fsoap</RootNamespace>
+    <AssemblyName>cn.noisyfox.fsoap</AssemblyName>
+    <DefaultLanguage>zh-CN</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile32</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\fobjects\fobjects.csproj">
+      <Project>{7F447D83-DF2D-4A8B-B213-6056E81AE0B0}</Project>
+      <Name>fobjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\fxml\fxml.csproj">
+      <Project>{8bab7317-6a91-4d60-a3c4-971435c26840}</Project>
+      <Name>fxml</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
+    <TargetPlatform Include="Windows, Version=8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HeaderProperty.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="serialization\AttributeContainer.cs" />
+    <Compile Include="serialization\AttributeInfo.cs" />
+    <Compile Include="serialization\FvmSerializable.cs" />
+    <Compile Include="serialization\FwdRef.cs" />
+    <Compile Include="serialization\HasAttributes.cs" />
+    <Compile Include="serialization\HasInnerText.cs" />
+    <Compile Include="serialization\Marshal.cs" />
+    <Compile Include="serialization\PropertyInfo.cs" />
+    <Compile Include="serialization\SoapObject.cs" />
+    <Compile Include="serialization\SoapPrimitive.cs" />
+    <Compile Include="serialization\SoapSerializationEnvelope.cs" />
+    <Compile Include="SoapEnvelope.cs" />
+    <Compile Include="SoapFault.cs" />
+    <Compile Include="transport\HttpResponseException.cs" />
+    <Compile Include="transport\HttpTransportSE.cs" />
+    <Compile Include="transport\ServiceConnection.cs" />
+    <Compile Include="transport\ServiceConnectionSE.cs" />
+    <Compile Include="transport\Transport.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

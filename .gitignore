@@ -1,0 +1,7 @@
+*~
+out/
+*.user
+*.suo
+bin/
+obj/
+
